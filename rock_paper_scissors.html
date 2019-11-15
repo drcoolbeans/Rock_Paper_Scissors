@@ -10,42 +10,52 @@ Rock, Paper, Scissors.
   <script>
 function computerPlay() {
 var options = ['rock', 'paper', 'scissors'];
-var choice = options[Math.floor(Math.random() * options.length)];
-console.log(choice);
-}
-function playRound(playerSelection, computerSelection) {
-if (playerSelection == 'rock'){
-    if (computerSelection == 'rock'){
-        alert('You tie, as the mighty rocks stare back at eachother.');
-    } else if (computerSelection == 'paper') {
-        alert('You have lost! Even the mighty rock cannot defeat silent but deadly paper!');
-    } else if (computerSelection == 'scissors') {
-        alert("You have won!  Pathetic Scissors have been crushed by your might!");
-    } else {
-        alert("No selection");
-    }
-} else if (playerSelection == 'paper') {
-    if (computerSelection == 'rock') {
-    alert('You have somehow defeated the mighty rock with a simple piece of paper.  Well done.');
-   } else if (computerSelection == 'paper') {
-    alert("You have tied.  Both papers sit in silence.");
-   } else {
-    alert("You have lost.  Scissors pulled a bitch move, and sliced your paper effortlessly.");
-   } 
-} else {
-    if (computerSelection == 'rock') {
-    alert('You have lost, being crushed by the mighty rock.');
-   } else if (computerSelection == 'paper') {
-    alert("You effortlessly cut the paper to shreds in seconds, you sly dog!");
-   } else {
-    alert("You both trade furious scissory blows, no one is the victor here");
-   }
-}
+return options[Math.floor(Math.random() * options.length)];
 }
 
-const playerSelection = 'rock';
-const computerSelection = computerPlay();
-playRound(playerSelection, computerSelection);
+function game(){
+
+	let playerWeapon = prompt("Choose your weapon");
+	let playerSelection = playerWeapon.toLowerCase();
+	console.log(playerSelection);
+
+	function playRound(playerSelection, computerSelection) {
+	if (playerSelection == 'rock'){
+    	if (computerSelection == 'rock'){
+        alert('You tie, as the mighty rocks stare back at eachother.');
+    	} else if (computerSelection == 'paper') {
+        alert('You have lost! Even the mighty rock cannot defeat silent but deadly paper!');
+    	} else if (computerSelection == 'scissors') {
+        alert("You have won!  Pathetic Scissors have been crushed by your might!");
+    	} else {
+        alert("No selection");
+    	}
+	} else if (playerSelection == 'paper') {
+    	if (computerSelection == 'rock') {
+    	alert('You have somehow defeated the mighty rock with a simple piece of paper.  Well done.');
+   	} else if (computerSelection == 'paper') {
+    	alert("You have tied.  Both papers sit in silence.");
+   	} else {
+    	alert("You have lost.  Scissors pulled a bitch move, and sliced your paper effortlessly.");
+   	} 
+	} else {
+    	if (computerSelection == 'rock') {
+    	alert('You have lost, being crushed by the mighty rock.');
+   	} else if (computerSelection == 'paper') {
+    	alert("You effortlessly cut the paper to shreds in seconds, you sly dog!");
+   	} else {
+    	alert("You both trade furious scissory blows, no one is the victor here");
+   	}
+	}
+	}
+
+	const computerSelection = computerPlay();
+	playRound(playerSelection, computerSelection);
+}
+
+game();
+
+
 
 
 
