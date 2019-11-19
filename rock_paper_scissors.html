@@ -2,12 +2,7 @@
 <html>
 <head>
   <title>Page Title</title>
-</head>
-<p>
-Rock, Paper, Scissors.
-</p>
-<body>
-  <script>
+    <script>
 function computerPlay() {
 var options = ['rock', 'paper', 'scissors'];
 return options[Math.floor(Math.random() * options.length)];
@@ -38,7 +33,7 @@ function game(){
    	} else {
     	alert("You have lost.  Scissors pulled a bitch move, and sliced your paper effortlessly.");
    	} 
-	} else {
+	} else if (playerSelection == 'scissors') {
     	if (computerSelection == 'rock') {
     	alert('You have lost, being crushed by the mighty rock.');
    	} else if (computerSelection == 'paper') {
@@ -46,6 +41,8 @@ function game(){
    	} else {
     	alert("You both trade furious scissory blows, no one is the victor here");
    	}
+	} else {
+		alert("THAT IS NOT A WEAPON!  Choose rock, paper, or scissors.")
 	}
 	}
 
@@ -60,5 +57,11 @@ game();
 
 
   </script>
+</head>
+<p>
+Rock, Paper, Scissors.
+</p>
+<body>
+
 </body>
 </html>
